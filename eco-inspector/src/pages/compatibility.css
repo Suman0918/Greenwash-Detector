@@ -1,0 +1,197 @@
+/* CSS Compatibility Fixes for Modern Browsers */
+
+/* Fix for text clipping properties */
+.text-gradient,
+.header-content h2,
+.analysis-header .header-content h2,
+.reports-header .header-content h2 {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Fallback for browsers that don't support background-clip: text */
+}
+
+/* Fix for line clamping */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Fix for scrollbar styling */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) #f1f1f1;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
+}
+
+/* Fix for backdrop filter fallbacks */
+.backdrop-blur {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* Fallback for browsers that don't support backdrop-filter */
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.backdrop-blur-dark {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* Fallback for browsers that don't support backdrop-filter */
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Fix for appearance property */
+.no-appearance {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Fix for user-select */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.select-all {
+  -webkit-user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
+}
+
+/* Fix for transform-style */
+.preserve-3d {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* Fix for mask properties */
+.mask-fade {
+  -webkit-mask: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
+  mask: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
+}
+
+/* Fix for clip-path */
+.clip-path-rounded {
+  -webkit-clip-path: inset(0 round 8px);
+  clip-path: inset(0 round 8px);
+}
+
+/* Improved focus indicators for accessibility */
+.focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Remove default focus for mouse users, keep for keyboard users */
+.no-focus-mouse:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Modern CSS Grid fallbacks */
+@supports not (display: grid) {
+  .grid-fallback {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .grid-fallback > * {
+    flex: 1 1 300px;
+    margin: 12px;
+  }
+}
+
+/* Modern Flexbox gap fallbacks */
+@supports not (gap: 1rem) {
+  .flex-gap > * + * {
+    margin-left: 1rem;
+  }
+  
+  .flex-gap-vertical > * + * {
+    margin-top: 1rem;
+  }
+}
+
+
+
+/* Color scheme support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --card-bg: #1f2937;
+    --text-dark: #f9fafb;
+    --light: #111827;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    --border-color: #000;
+  }
+  
+  .card, .report-card, .info-card {
+    border: 2px solid var(--border-color);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .spinning {
+    animation: none;
+  }
+  
+  .loading-spinner,
+  .loading-spinner-large {
+    border-top-color: var(--primary);
+    border-right-color: var(--primary);
+  }
+}

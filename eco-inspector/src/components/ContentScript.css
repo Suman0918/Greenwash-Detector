@@ -1,0 +1,55 @@
+.eco-inspector-overlay {
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reset some styles that might be affected by the host page */
+.eco-inspector-overlay * {
+  box-sizing: border-box;
+}
+
+.eco-inspector-overlay h1, 
+.eco-inspector-overlay h2, 
+.eco-inspector-overlay h3, 
+.eco-inspector-overlay h4, 
+.eco-inspector-overlay p,
+.eco-inspector-overlay ul,
+.eco-inspector-overlay li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Z-index management to ensure our components stay on top */
+.eco-inspector-overlay .floating-button {
+  z-index: 2147483646; /* One less than max to allow sidebar to be higher */
+}
+
+.eco-inspector-overlay .overlay-sidebar {
+  z-index: 2147483647; /* Maximum z-index value */
+}
+
+/* Fix for host page CSS interference */
+.eco-inspector-overlay button {
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  line-height: normal;
+}
+
+/* CSS Variables for theming */
+.eco-inspector-overlay {
+  --primary: #2e8b57;    /* Sea Green */
+  --primary-hover: #267349;
+  --secondary: #34675c;  /* Deep green-blue */
+  --accent: #f0c05a;     /* Amber */
+  --light: #f4f9f4;      /* Off-white with slight green tint */
+  --dark: #263238;       /* Dark blue-gray */
+  --text-dark: #263238;
+  --text-light: #f4f9f4;
+  --success: #4caf50;    /* Green */
+  --warning: #ff9800;    /* Orange */
+  --danger: #f44336;     /* Red */
+  --transition-speed: 0.3s;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --text-muted: #78909c;
+}

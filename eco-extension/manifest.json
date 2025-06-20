@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Eco Inspector",
+  "version": "2.0",
+  "description": "Detect sustainability of fashion products on H&M, Zara, Myntra",
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*.hm.com/*",
+    "*://*.myntra.com/*",
+    "*://*.zara.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.hm.com/*", "*://*.myntra.com/*", "*://*.zara.com/*"],
+      "js": ["content-script.js"],
+      "css": ["content-styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

@@ -1,0 +1,179 @@
+/* Floating ECO Button */
+.eco-inspector-floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #4CAF50;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+  z-index: 99999;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.eco-inspector-floating-btn:hover {
+  background: #2e7d32;
+}
+
+/* Sidebar Container */
+.eco-inspector-sidebar {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  width: 400px;
+  height: 100vh;
+  background: #fefefe;
+  color: #333;
+  box-shadow: -6px 0 16px rgba(0, 0, 0, 0.1);
+  z-index: 99998;
+  transition: right 0.4s ease;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+.eco-sidebar-open {
+  right: 0;
+}
+
+/* Sidebar Scroll Fix */
+.eco-sidebar-content {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* Header */
+.eco-sidebar-header {
+  padding: 16px 20px;
+  background-color: #e8f5e9;
+  border-bottom: 1px solid #c8e6c9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.eco-sidebar-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2e7d32;
+}
+.eco-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #777;
+  cursor: pointer;
+}
+.eco-close-btn:hover {
+  color: #222;
+}
+
+/* Section Title */
+.eco-section {
+  margin-top: 20px;
+}
+.eco-section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #388e3c;
+  margin-bottom: 8px;
+}
+
+/* Product Info Block */
+.eco-product-info {
+  background: #f1f8e9;
+  padding: 14px;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+.eco-product-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.eco-product-desc {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+/* Analyze Button */
+.eco-analyze-btn {
+  background-color: #43a047;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+.eco-analyze-btn:hover {
+  background-color: #2e7d32;
+}
+
+/* Score Display */
+.eco-score-card {
+  text-align: center;
+  margin: 14px 0;
+}
+.eco-score-display {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #4caf50;
+}
+.eco-score-label {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Justification Section */
+.eco-justification {
+  margin-top: 12px;
+}
+.eco-justification h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #2e7d32;
+}
+.eco-justification p {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Save Button */
+.eco-save-btn {
+  margin-top: 12px;
+  background-color: #1e88e5;
+  color: #fff;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+.eco-save-btn:hover {
+  background-color: #1565c0;
+}
+
+/* Scrollbar (optional customization) */
+.eco-sidebar-content::-webkit-scrollbar {
+  width: 8px;
+}
+.eco-sidebar-content::-webkit-scrollbar-thumb {
+  background-color: #b2dfdb;
+  border-radius: 4px;
+}
+.eco-save-status {
+  font-size: 0.9rem;
+  margin-top: 8px;
+  transition: opacity 0.4s ease;
+}
